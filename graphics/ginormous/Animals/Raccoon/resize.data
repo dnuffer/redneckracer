@@ -1,0 +1,3 @@
+glob=RaccoonDead.png:atl=race:resize=.181250000000
+glob=RaccoonAlive*.png:atl=race:resize=.191666666666
+

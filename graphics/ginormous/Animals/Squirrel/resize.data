@@ -1,0 +1,5 @@
+glob=SquirrelDead.png:atl=race:resize=.206250000000
+glob=SquirrelAlive*.png:atl=race:resize=.216666666666
+
+
+

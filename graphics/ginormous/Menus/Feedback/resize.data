@@ -1,0 +1,4 @@
+glob=BackToMenuText*.png:atl=race:resize=.310416666666
+glob=RateIt*.png:atl=race:resize=.345833333333
+glob=Later*.png:atl=race:resize=.212500000000
+glob=Never*.png:atl=race:resize=.254166666666

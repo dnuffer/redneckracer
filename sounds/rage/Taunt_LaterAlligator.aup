@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Taunt_LaterAlligator_data" version="1.3.0" audacityversion="1.3.13-beta" sel0="1.1896564590" sel1="1.1896564590" vpos="0" h="0.0000000000" zoom="1558.4330971577" rate="22050.0">
+	<tags/>
+	<wavetrack name="Taunt_LaterAlligator" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="57104">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000bc4.au" len="57104" min="-0.947835" max="0.653589" rms="0.117467"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

@@ -1,0 +1,4 @@
+glob=PossumAlive*.png:atl=race:resize=.231250000000
+glob=PossumDead.png:atl=race:resize=.216666666666
+
+

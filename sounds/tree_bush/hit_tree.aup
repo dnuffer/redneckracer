@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="hit_tree_data" version="1.3.0" audacityversion="1.3.13-beta" sel0="0.3424595008" sel1="1.2720011675" vpos="0" h="0.0000000000" zoom="81.7614927726" rate="22050.0">
+	<tags>
+		<tag name="ARTIST" value="Detroit Chop Shop"/>
+		<tag name="Copyright" value="Copyright (c) 2007 Apple Inc.  All Rights Reserved."/>
+		<tag name="COMMENTS" value="http://www.sound-ideas.com"/>
+	</tags>
+	<wavetrack name="Falling Tree" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.34245950">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="44618">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000436.au" len="24657" min="-0.524567" max="0.596985" rms="0.064465"/>
+				</waveblock>
+				<waveblock start="24657">
+					<simpleblockfile filename="e0000f5b.au" len="19961" min="-0.403824" max="0.424435" rms="0.043922"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Falling Tree" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" rate="48000" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="61643">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000a9a.au" len="61643" min="-1.819678" max="1.619627" rms="0.17667"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

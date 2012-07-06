@@ -1,0 +1,5 @@
+glob=PoliceTruckDrivesNorth*.png:atl=race:resize=.145833333333
+glob=PoliceTruckTurnsRight*.png:atl=race:resize=.1959000000000
+glob=PoliceTruckDrivesRight*.png:atl=race:resize=.1671747967475
+glob=PoliceTruckDrivesLeft*.png:atl=race:resize=.1541327913275
+glob=PoliceTruckTurnsLeft*.png:atl=race:resize=.162037037036

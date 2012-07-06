@@ -1,0 +1,11 @@
+glob=SteeringWheel.png:atl=loading:resize=.237500000000
+glob=Stereo.png:atl=loading:resize=.354166666666
+glob=On*.png:atl=loading:resize=.106250000000
+glob=Off*.png:atl=loading:resize=.127083333333
+glob=DPad*.png:atl=loading:resize=.231250000000
+glob=DPadAlt*.png:atl=loading:resize=.381250000000
+glob=Keyboard*.png:atl=loading:resize=.389583333333
+glob=Trackball*.png:atl=loading:resize=.420833333333
+glob=Tilt*.png:atl=loading:resize=.156250000000
+glob=Audio*.png:atl=loading:resize=.379166666666
+glob=Controls*.png:atl=loading:resize=.577083333333

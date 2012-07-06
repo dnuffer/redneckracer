@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RedneckRacerLite" default="help">
+
+<!-- The local.properties file is created and updated by the 'android'
+     tool.
+     It contains the path to the SDK. It should *NOT* be checked into
+     Version Control Systems. -->
+    <property file="local.properties" />
+
+    <!-- The build.properties file can be created by you and is never touched
+         by the 'android' tool. This is the place to change some of the
+         default property values used by the Ant rules.
+         Here are some properties you may want to change/update:
+
+         source.dir
+             The name of the source directory. Default is 'src'.
+         out.dir
+             The name of the output directory. Default is 'bin'.
+
+         Properties related to the SDK location or the project target should
+         be updated using the 'android' tool with the 'update' action.
+
+         This file is an integral part of the build system for your
+         application and should be checked into Version Control Systems.
+
+         -->
+    <property file="build.properties" />
+
+    <!-- The default.properties file is created and updated by the 'android'
+         tool, as well as ADT.
+         This file is an integral part of the build system for your
+         application and should be checked into Version Control Systems. -->
+    <property file="default.properties" />
+
+
+    <!-- Required pre-setup import -->
+    <import file="${sdk.dir}/tools/ant/pre_setup.xml" />
+
+
+<!-- extension targets. Uncomment the ones where you want to do custom work
+     in between standard targets -->
+<!--
+    <target name="-pre-build">
+    </target>
+    <target name="-pre-compile">
+    </target>
+
+    [This is typically used for code obfuscation.
+     Compiled code location: ${out.classes.absolute.dir}
+     If this is not done in place, override ${out.dex.input.absolute.dir}]
+    <target name="-post-compile">
+    </target>
+-->
+
+
+    <!-- Execute the Android Setup task that will setup some properties
+         specific to the target, and import the build rules files.
+
+         The rules file is imported from
+            <SDK>/tools/ant/
+         Depending on the project type it can be either:
+         - main_rules.xml
+         - lib_rules.xml
+         - test_rules.xml
+
+         To customize existing targets, there are two options:
+         - Customize only one target:
+             - copy/paste the target into this file, *before* the
+               <setup> task.
+             - customize it to your needs.
+         - Customize the whole script.
+             - copy/paste the content of the rules files (minus the top node)
+               into this file, *after* the <setup> task
+             - disable the import of the rules by changing the setup task
+               below to <setup import="false" />.
+             - customize to your needs.
+    -->
+    <setup />
+
+        <!-- None of the stuff below here is standard.  It was added to
+                       include the ndk build into the normal ant build process -->
+    <property name="ndk-build" location="${ndk.dir}/ndk-build" />
+    <property name="libs.dir" value="libs" />
+    <property name="obj.dir" value="obj" />
+
+    <target name="run-ndk-build">
+        <condition property="ndk-build.ndk_debug-opt" value="1" else="0">
+            <isset property="build.mode.debug" />
+        </condition>
+
+    	<sequential>
+      	    <echo>Running ndk-build DEBUG_OPT="${ndk-build.debug-opt}" NDK_DEBUG=${ndk-build.ndk_debug-opt}</echo>
+            <exec executable="${ndk-build}" failonerror="true">
+                <arg value="NDK_DEBUG=${ndk-build.ndk_debug-opt}"/>
+                <arg value="-j8"/>
+            </exec>
+      </sequential>
+    </target>
+
+    <target name="clean-local">
+	    <delete dir="${libs.dir}" verbose="${verbose}" />
+		 <delete dir="${obj.dir}" verbose="${verbose}" />
+    </target>
+
+    <target name="-pre-compile" depends="run-ndk-build">
+        <echo>Pre-compile</echo>
+    </target>
+
+    <target name="-post-compile">
+      <echo>Post-compile</echo>
+    </target>
+
+
+    <target name="clean"
+				description="Removes output files created by other targets."
+				depends="clean-local" >
+        <delete dir="${out.absolute.dir}" verbose="${verbose}" />
+        <delete dir="${gen.absolute.dir}" verbose="${verbose}" />
+    </target>
+</project>

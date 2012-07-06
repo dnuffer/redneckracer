@@ -1,0 +1,72 @@
+/* automatically generated */
+#ifndef SRC_BLOCXX_BLOCXX_OSX_PPC_CONFIG_H
+#define SRC_BLOCXX_BLOCXX_OSX_PPC_CONFIG_H 1
+
+// Not a full config.h...
+
+/* need this to set up an alias. */
+namespace BLOCXX_NAMESPACE
+{
+namespace Time {}
+}
+
+namespace blocxx = BLOCXX_NAMESPACE;
+
+#ifndef BLOCXX_SIZEOF_CHAR
+#define BLOCXX_SIZEOF_CHAR 1
+#endif
+
+#ifndef BLOCXX_SIZEOF_SHORT_INT
+#define BLOCXX_SIZEOF_SHORT_INT 2
+#endif
+
+#ifndef BLOCXX_SIZEOF_INT
+#define BLOCXX_SIZEOF_INT 4
+#endif
+
+
+#ifndef BLOCXX_SIZEOF_LONG_INT
+#define BLOCXX_SIZEOF_LONG_INT 8
+#endif
+
+#ifndef BLOCXX_SIZEOF_LONG_LONG_INT
+#define BLOCXX_SIZEOF_LONG_LONG_INT 8
+#endif
+
+#ifndef BLOCXX_SIZEOF_FLOAT
+#define BLOCXX_SIZEOF_FLOAT 4
+#endif
+
+#ifndef BLOCXX_SIZEOF_DOUBLE
+#define BLOCXX_SIZEOF_DOUBLE 8
+#endif
+
+#ifndef BLOCXX_SIZEOF_LONG_DOUBLE
+#define BLOCXX_SIZEOF_LONG_DOUBLE 16
+#endif
+
+#ifndef BLOCXX_THREAD_ONCE_INIT
+#define BLOCXX_THREAD_ONCE_INIT PTHREAD_ONCE_INIT
+#endif
+
+#ifndef BLOCXX_EXPORT_TEMPLATE
+#define BLOCXX_EXPORT_TEMPLATE(API, TMPL, X)
+#endif
+
+#ifndef BLOCXX_MUTEX_INITIALIZER
+#define BLOCXX_MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER
+#endif
+
+#define BLOCXX_COMMON_API
+#define BLOCXX_FUNCTION_NOT_IMPLEMENTED
+#define BLOCXX_USE_PTHREAD
+#define BLOCXX_HAVE_GETTIMEOFDAY
+
+#ifndef __EXCEPTIONS
+#define BLOCXX_NO_EXCEPTIONS
+#endif
+
+#define BLOCXX_HAVE_STREAMBUF
+#define BLOCXX_HAVE_SYS_TIME_H
+
+#endif

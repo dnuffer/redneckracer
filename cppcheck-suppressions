@@ -1,0 +1,9 @@
+missingInclude:jni/libpng/png.h
+missingInclude:jni/libpng/pngconf.h
+missingInclude:jni/engine/EngineConfig.hpp
+operatorEqVarError:jni/miniblocxx/IntrusiveCountableBase.hpp:84
+uninitVar:jni/graphlib/MouseInput.cpp:74
+operatorEqVarError:jni/graphlib/MouseInput.cpp:89
+operatorEqVarError:jni/miniblocxx/COWIntrusiveCountableBase.hpp:96
+missingInclude:jni/miniblocxx/BLOCXX_config.h:5
+missingInclude:jni/engine/Resources.cpp:21

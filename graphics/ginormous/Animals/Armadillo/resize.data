@@ -1,0 +1,5 @@
+glob=ArmadilloDead.png:atl=race:resize=.250000000000
+glob=ArmadilloAlive*.png:atl=race:resize=.187500000000
+
+
+

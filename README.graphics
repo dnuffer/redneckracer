@@ -1,0 +1,29 @@
+Adding animations, graphics
+
+1. To trim animation frames, first find the crop size, then crop away blank edges. This assumes that all the frames are the same size and in the same position within the frame.
+$ convert foo/*.png -trim -layers merge -format "%wx%h%X%Y" info:
+75x57+191+201
+$ for x in foo/*.png; do convert "$x" -crop 75x57+191+201 +repage $(basename "$x"); done
+
+For single images, this can be done in one step using convert -trim +repage.
+
+2. Resize to WVGA (480x800), etc.
+dans-macpro:wvga dan$ for x in ../ginormous/Other/Sparks/*.png; do convert "$x" -resize 50% $(basename "$x"); done 
+
+Might have to play with the percentage to get it right. If an exact size is desired it can be specified by wxh!
+
+3. Regenerate the atlas
+You can run generate_atlases.sh to create them all (takes a minute or so)
+Or to just make one race atlas:
+	atlas=race1.atl # substitute the actual name here
+        name=${atlas%.atl}
+        ../../mkatlas.pl -f $atlas -s 1024 -p 2 -g race || echo "FAILED"
+        mv -f ${name}.atlas ${name}Atlas.png ../../assets/
+
+
+If the image is completely gray, imagemagick (convert) will change the PNG color type to greyscale+alpha (4). The perl script that 
+generates the atlas doesn't handle these types correctly. To force convert to keep the image in Truecolor+alpha (6), add this command 
+line option: 
+-define png:color-type=6
+See http://www.imagemagick.org/script/command-line-options.php#define and http://en.wikipedia.org/wiki/Portable_Network_Graphics. Thank god for the internet and google!
+

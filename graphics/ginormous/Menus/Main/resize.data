@@ -1,0 +1,7 @@
+glob=MainMenuTitle.png:atl=loading:resize=.716250000000
+glob=A_MainBackground.png:atl=loading:resize=1.000000000000:alternates=MainBackground
+glob=B_MainBackground.png:atl=loading:resize=1.000000000000:alternates=MainBackground
+glob=Options*.png:atl=loading:resize=.433333333333
+glob=Race*.png:atl=loading:resize=.341666666666
+glob=Tips*.png:atl=loading:resize=.335416666666
+glob=BackArrow*.png:atl=race:resize=.222916666666

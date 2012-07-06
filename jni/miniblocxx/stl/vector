@@ -1,0 +1,16 @@
+#if !defined(BLOCXX_STL_VECTOR)
+#define BLOCXX_STL_VECTOR
+#include "miniblocxx/BLOCXX_config.h"
+
+#ifdef BLOCXX_NO_STL
+#include "miniblocxx/stl/vector.hpp"
+
+namespace std
+{
+	using BLOCXX_NAMESPACE::vector;
+}
+#else
+#include <vector>
+#endif
+
+#endif

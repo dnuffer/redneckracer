@@ -1,0 +1,23 @@
+#if !defined(BLOCXX_STL_ALGORITHM)
+#define BLOCXX_STL_ALGORITHM
+
+#include "miniblocxx/BLOCXX_config.h"
+
+#ifdef BLOCXX_NO_STL
+#include "miniblocxx/stl/algorithm.hpp"
+#ifdef _GLIBCXX_ALGORITHM
+#error You did something wrong.
+#endif
+namespace std
+{
+	using BLOCXX_NAMESPACE::lower_bound;
+	using BLOCXX_NAMESPACE::swap;
+	using BLOCXX_NAMESPACE::find;
+	using BLOCXX_NAMESPACE::min;
+	using BLOCXX_NAMESPACE::max;
+}
+#else
+#include <algorithm>
+#endif
+
+#endif /* !defined(BLOCXX_STL_ALGORITHM) */

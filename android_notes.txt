@@ -1,0 +1,64 @@
+* Install the jdk.
+  * On ubuntu 10.04:
+  	 # add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+    # apt-get update
+	 # apt-get install sun-java6-jdk
+	 # update-java-alternatives -l      (to check)
+	 # update-java-alternatives -s java-6-sun
+* Install ant
+
+* Install ia32-libs (on ubuntu 64-bit)
+
+* Get the tools:  http://developer.android.com/sdk/index.html
+* Install them, install sdks with them.
+* Using "android", add a virtual device for any random android version
+* Start the emulator
+* Create a project:
+	$ android create project --target 1 --name HelloWorldApp --path $PWD/HelloWorld --activity HelloWorld --package com.example.helloworld
+
+* Edit the project to do something, such as adding to HelloWorld.java:
+import android.widget.TextView;
+...
+		  TextView tv = new TextView(this);
+		  tv.setText("Hello, World");
+		  setContentView(tv);
+
+* Build the project:
+	$ ant debug
+
+* Copy the package to the running emulator ("ant install" will also work):
+	$ adb -e install <path-to-compiled-apk>
+
+* Try it in the emulator
+
+* Copy it to a phone (you will need to enable USB debugging on your phone):
+	$ adb -d install <path-to-compiled-apk>
+
+---------------------------------------------------------------------------
+To build what is here: Create local.properties containing something
+like:
+#####
+# NOT TO BE CHECKED IN
+sdk.dir=/usr/local/android-sdk-linux_86
+ndk.dir=/usr/local/android-ndk-r4b
+
+#use for dev "release" build
+key.store=dev-release.keystore
+key.alias=dev-release
+key.store.password=password
+key.alias.password=password
+#####
+
+---------------------------------------------------------------------------
+To create the keystore (this is how it was done for another project):
+$ keytool -genkey -v -keystore defender.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000 -keypass PASSWORD -storepass PASSWORD -dname 'CN=Defender,OU=Defender,O=Quest Software'
+
+To sign:
+jarsigner -verbose -keystore defender.keystore -storepass PASSWORD -keypass PASSWORD bin/DroidTok-unsigned.apk release
+
+To verify:
+jarsigner -verify -verbose -certs bin/DroidTok-unsigned.apk
+
+To align:
+/Applications/android-sdk-mac_86/tools/zipalign -v 4 bin/DroidTok-unsigned.apk bin/DroidTok.apk
+
